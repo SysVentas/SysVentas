@@ -1,30 +1,26 @@
 package sysVentasJava;
+
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.Icon;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
-import javax.swing.ImageIcon;
-import java.awt.Color;
-import javax.swing.UIManager;
 
-public class empleado extends JFrame {
+public class Admin {
 	
 	JLabel imagen,fecha,ventahoy,fecha1,ventahoy1;
 	JButton crear_usuario,venta_dia,consulta,ingresar,realizar_venta,modificar,salir;
 	JPanel panel1,panel2;
 	Border bordejpanel,borde2;
-	JButton btnSalir;
+	private JButton btnSalir;
 	
-	empleado(){
+	Admin(){
 	//////////////////////////	
-	setTitle("Menu Empleado");
+	setTitle("Menu Administrador");
 	setBounds(0,0,637,401);
 	getContentPane().setLayout(null);
 	setIconImage(Toolkit.getDefaultToolkit().getImage(empleado.class.getResource("/sysVentasJava/ico-venta-equipo.png")));
@@ -99,5 +95,7 @@ public class empleado extends JFrame {
 	salir.setBounds(522, 307, 89, 23);
 	add(salir);
 	
-	}
+}
+	
+
 }
