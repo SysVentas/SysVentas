@@ -61,7 +61,9 @@ public class login extends JFrame implements ActionListener{
         if(e.getSource()==ingresar){
         	empleado vent2=new empleado();
         	vent2.setVisible(true);
-        	//this.setVisible(false);
+        	Admin vent3=new Admin();
+        	vent3.setVisible(true);
+        	this.setVisible(false);
         }
         
     }

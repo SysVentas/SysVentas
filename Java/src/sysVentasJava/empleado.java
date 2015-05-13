@@ -2,6 +2,7 @@ package sysVentasJava;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,13 +12,15 @@ import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.ImageIcon;
+
 import java.awt.Color;
+
 import javax.swing.UIManager;
 
-public class empleado extends JFrame {
+public class empleado extends JFrame implements ActionListener{
 	
 	JLabel imagen,fecha,ventahoy,fecha1,ventahoy1;
-	JButton crear_usuario,venta_dia,consulta,ingresar,realizar_venta,modificar,salir;
+	JButton crear_usuario,venta_dia,consulta,ingresar,realizar_venta,modificar,salir1;
 	JPanel panel1,panel2;
 	Border bordejpanel,borde2;
 	JButton btnSalir;
@@ -95,9 +98,19 @@ public class empleado extends JFrame {
 	modificar.setBounds(189,153,156,38);
 	panel2.add(modificar);
 	
-	salir = new JButton("Salir");
-	salir.setBounds(522, 307, 89, 23);
-	add(salir);
+	salir1 = new JButton("Salir");
+	salir1.setBounds(522, 307, 89, 23);
+	salir1.addActionListener(this);
+	add(salir1);
+	
+	
 	
 	}
+	
+	public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==salir1) {
+        	this.setVisible(false);
+        }
+	}
+      
 }

@@ -1,19 +1,22 @@
 package sysVentasJava;
 
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
-public class Admin {
+public class Admin extends JFrame implements ActionListener {
 	
 	JLabel imagen,fecha,ventahoy,fecha1,ventahoy1;
-	JButton crear_usuario,venta_dia,consulta,ingresar,realizar_venta,modificar,salir;
+	JButton crear_cliente,venta_dia,consulta,ingresar,realizar_venta,modificar,salir,crear_usuario,eliminar;
 	JPanel panel1,panel2;
 	Border bordejpanel,borde2;
 	private JButton btnSalir;
@@ -35,8 +38,8 @@ public class Admin {
 	getContentPane().add(panel1);	
 	
 	imagen=new JLabel("");
-	imagen.setIcon(new ImageIcon(empleado.class.getResource("/sysVentasJava/descarga.jpg")));
-	imagen.setBounds(52,23,125,141);
+	imagen.setIcon(new ImageIcon(Admin.class.getResource("/sysVentasJava/descarga.jpg")));
+	imagen.setBounds(40,39,114,136);
 	panel1.add(imagen);	
 	
 	fecha=new JLabel("Fecha");
@@ -58,18 +61,16 @@ public class Admin {
 	//////////////////////////////////////
 	
 	panel2 = new JPanel();
-	panel2.setBounds(244, 10, 371, 228);
+	panel2.setBounds(244, 10, 371, 269);
 	panel2.setLayout(null);
 	getContentPane().add(panel2);	
 	borde2= new TitledBorder(new EtchedBorder(), "Opciones");
 	panel2.setBorder(borde2);
 	getContentPane().add(panel2);	
 	
-	//JButton crear_usuario,venta_dia,consulta,ingresar,realizar_venta,modificar;
-	
-	crear_usuario=new JButton("Crear Usuario");
-	crear_usuario.setBounds(23,49,156,38);
-	panel2.add(crear_usuario);
+	crear_cliente=new JButton("Crear cliente");
+	crear_cliente.setBounds(23,49,156,38);
+	panel2.add(crear_cliente);
 	
 	venta_dia=new JButton("Venta Del Dia");
 	venta_dia.setBounds(189,49,156,38);
@@ -91,11 +92,26 @@ public class Admin {
 	modificar.setBounds(189,153,156,38);
 	panel2.add(modificar);
 	
+	crear_usuario=new JButton("Crear Usuario");
+	crear_usuario.setBounds(23,202,156,38);
+	panel2.add(crear_usuario);
+	
+	eliminar=new JButton("Eliminar Usuario");
+	eliminar.setBounds(189,202,156,38);
+	panel2.add(eliminar);
+	
 	salir = new JButton("Salir");
 	salir.setBounds(522, 307, 89, 23);
-	add(salir);
+	salir.addActionListener(this);
+	getContentPane().add(salir);
 	
 }
+	public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==salir) {
+        	this.setVisible(false);
+        }
+	}
+     
 	
 
 }
