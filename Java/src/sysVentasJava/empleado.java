@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.UIManager;
 
-public class empleado extends JFrame implements ActionListener {
+public class empleado extends JFrame {
 	
 	JLabel imagen,fecha,ventahoy,fecha1,ventahoy1;
 	JButton crear_usuario,venta_dia,consulta,ingresar,realizar_venta,modificar,salir;
@@ -52,7 +52,7 @@ public class empleado extends JFrame implements ActionListener {
 	panel1.add(fecha1);
 	
 	ventahoy=new JLabel("Venta De Hoy");
-	ventahoy.setBounds(10,220,74,23);
+	ventahoy.setBounds(10,223,74,23);
 	panel1.add(ventahoy);
 	
 	ventahoy1=new JLabel("aqui poner monto");
@@ -100,11 +100,7 @@ public class empleado extends JFrame implements ActionListener {
 	add(salir);
 	
 }
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	
 	
