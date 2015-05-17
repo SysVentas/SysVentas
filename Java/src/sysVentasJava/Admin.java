@@ -19,7 +19,7 @@ public class Admin extends JFrame implements ActionListener {
 	JButton crear_cliente,venta_dia,consulta,ingresar,realizar_venta,modificar,salir,crear_usuario,eliminar;
 	JPanel panel1,panel2;
 	Border bordejpanel,borde2;
-	private JButton btnSalir;
+
 	
 	Admin(){
 	//////////////////////////	
