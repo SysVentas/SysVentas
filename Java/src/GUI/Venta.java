@@ -71,5 +71,5 @@ public class Venta extends JFrame {
 		
 	}
 	
-	
+
 }
