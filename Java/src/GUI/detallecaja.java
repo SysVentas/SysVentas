@@ -53,11 +53,9 @@ public class detallecaja extends JFrame {
 		tabla = new JTable(modelo);
 		scroll= new JScrollPane(tabla);
 		scroll.setBounds(10,55,566,293);		
-		
 		for(int i = 0; i < columnas.length; i++){
 			modelo.addColumn(columnas[i]);
 		}
-		
 		panel1.add(scroll);
 		
 		
