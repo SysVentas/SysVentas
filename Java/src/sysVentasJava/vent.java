@@ -1,9 +1,7 @@
 package sysVentasJava;
-
-import javax.swing.JButton;
+import GUI.login;
 
 public class vent {
-	
 	
 public static void main(String[] args){
 	login vent1=new login();

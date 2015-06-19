@@ -1,9 +1,10 @@
-package sysVentasJava;
+package GUI;
+
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -11,23 +12,18 @@ import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
-import javax.swing.ImageIcon;
 
-import java.awt.Color;
-
-import javax.swing.UIManager;
-
-public class empleado extends JFrame implements ActionListener{
+public class Admin extends JFrame implements ActionListener {
 	
 	JLabel imagen,fecha,ventahoy,fecha1,ventahoy1;
-	JButton crear_usuario,venta_dia,consulta,ingresar,realizar_venta,modificar,salir1;
+	JButton crear_cliente,venta_dia,consulta,ingresar,realizar_venta,modificar,salir,crear_usuario,eliminar;
 	JPanel panel1,panel2;
 	Border bordejpanel,borde2;
-	JButton btnSalir;
+
 	
-	empleado(){
+	Admin(){
 	//////////////////////////	
-	setTitle("Menu Empleado");
+	setTitle("Menu Administrador");
 	setBounds(0,0,637,401);
 	getContentPane().setLayout(null);
 	setIconImage(Toolkit.getDefaultToolkit().getImage(empleado.class.getResource("/sysVentasJava/ico-venta-equipo.png")));
@@ -42,8 +38,8 @@ public class empleado extends JFrame implements ActionListener{
 	getContentPane().add(panel1);	
 	
 	imagen=new JLabel("");
-	imagen.setIcon(new ImageIcon(empleado.class.getResource("/sysVentasJava/descarga.jpg")));
-	imagen.setBounds(52,23,125,141);
+	imagen.setIcon(new ImageIcon(Admin.class.getResource("/sysVentasJava/descarga.jpg")));
+	imagen.setBounds(40,39,114,136);
 	panel1.add(imagen);	
 	
 	fecha=new JLabel("Fecha");
@@ -65,18 +61,16 @@ public class empleado extends JFrame implements ActionListener{
 	//////////////////////////////////////
 	
 	panel2 = new JPanel();
-	panel2.setBounds(244, 10, 371, 228);
+	panel2.setBounds(244, 10, 371, 269);
 	panel2.setLayout(null);
 	getContentPane().add(panel2);	
 	borde2= new TitledBorder(new EtchedBorder(), "Opciones");
 	panel2.setBorder(borde2);
 	getContentPane().add(panel2);	
 	
-	//JButton crear_usuario,venta_dia,consulta,ingresar,realizar_venta,modificar;
-	
-	crear_usuario=new JButton("Crear Usuario");
-	crear_usuario.setBounds(23,49,156,38);
-	panel2.add(crear_usuario);
+	crear_cliente=new JButton("Crear cliente");
+	crear_cliente.setBounds(23,49,156,38);
+	panel2.add(crear_cliente);
 	
 	venta_dia=new JButton("Venta Del Dia");
 	venta_dia.setBounds(189,49,156,38);
@@ -98,19 +92,26 @@ public class empleado extends JFrame implements ActionListener{
 	modificar.setBounds(189,153,156,38);
 	panel2.add(modificar);
 	
-	salir1 = new JButton("Salir");
-	salir1.setBounds(522, 307, 89, 23);
-	salir1.addActionListener(this);
-	add(salir1);
+	crear_usuario=new JButton("Crear Usuario");
+	crear_usuario.setBounds(23,202,156,38);
+	panel2.add(crear_usuario);
 	
+	eliminar=new JButton("Eliminar Usuario");
+	eliminar.setBounds(189,202,156,38);
+	panel2.add(eliminar);
 	
+	salir = new JButton("Salir");
+	salir.setBounds(522, 307, 89, 23);
+	salir.addActionListener(this);
+	getContentPane().add(salir);
 	
-	}
-	
+}
 	public void actionPerformed(ActionEvent e) {
-        if (e.getSource()==salir1) {
+        if (e.getSource()==salir) {
         	this.setVisible(false);
         }
 	}
-      
+     
+	
+
 }

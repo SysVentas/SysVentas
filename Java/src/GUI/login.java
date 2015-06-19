@@ -1,4 +1,4 @@
-package sysVentasJava;
+package GUI;
 
 import javax.swing.*;
 
@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 
 
 
-public class login extends JFrame implements ActionListener{
+public class login extends JFrame {
 	JTextField tex1;
 	JPasswordField tex2;
 	JButton ingresar;
@@ -18,11 +18,13 @@ public class login extends JFrame implements ActionListener{
 	JLabel imagen;
 	static int flag;
 	
-	login(){
+	public login(){
 	/////////////////////////777	
 	setTitle("login");
 	setBounds(0,0,367,374);
     setIconImage(Toolkit.getDefaultToolkit().getImage(login.class.getResource("/sysVentasJava/ico-venta-equipo.png")));
+    setLocationRelativeTo(null);
+	setDefaultCloseOperation(EXIT_ON_CLOSE);
 	
 	getContentPane().setLayout(null);
 	
@@ -38,13 +40,13 @@ public class login extends JFrame implements ActionListener{
 	ingresar.setFont(new Font("Comic Sans MS", Font.PLAIN, 10));
 	ingresar.setBounds(105,277,97,30);
 	getContentPane().add(ingresar);
-	ingresar.addActionListener(this);
+	ingresar.addActionListener(new listener());
 	
 	salir =new JButton("Salir");
 	salir.setFont(new Font("Comic Sans MS", Font.PLAIN, 10));
 	salir.setBounds(216,277,63,30);
 	getContentPane().add(salir);
-	salir.addActionListener(this);
+	salir.addActionListener(new listener());
 	
 	imagen=new JLabel();
 	imagen.setIcon(new ImageIcon(login.class.getResource("/sysVentasJava/ico-venta-equipo.png")));
@@ -52,8 +54,8 @@ public class login extends JFrame implements ActionListener{
 	imagen.setBounds(95,8,165,176);
 			
 	}
-	
-	public void actionPerformed(ActionEvent e) {
+	public class listener implements ActionListener{
+	 public void actionPerformed(ActionEvent e) {
         if (e.getSource()==salir) {
             System.exit(0);
         }
@@ -63,9 +65,10 @@ public class login extends JFrame implements ActionListener{
         	vent2.setVisible(true);
         	Admin vent3=new Admin();
         	vent3.setVisible(true);
-        	this.setVisible(false);
+        	setVisible(false);
         }
         
+        
     }
-
 	}
+}
